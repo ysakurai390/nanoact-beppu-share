@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NanoAct | 別府向けモビリティ導入案内</title>
+  <style>
+    :root {
+      --bg: #eef4fb;
+      --paper: #ffffff;
+      --ink: #1c2740;
+      --muted: #4f617f;
+      --line: #d6e0ef;
+      --brand: #0c6a5e;
+      --brand-soft: #daf3ee;
+      --accent: #1d4d98;
+      --accent-soft: #deebff;
+      --shadow: 0 18px 45px rgba(18, 34, 67, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 300px at 90% -10%, #d8f4ef 0%, transparent 70%),
+        radial-gradient(900px 300px at 0% 110%, #dfeafe 0%, transparent 72%),
+        var(--bg);
+      font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      line-height: 1.55;
+    }
+
+    .container {
+      width: min(1080px, 94vw);
+      margin: 28px auto 44px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 0;
+      min-height: 330px;
+    }
+
+    .hero-copy {
+      padding: 30px;
+      background: linear-gradient(130deg, #f9fcff 0%, #edf6ff 100%);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(24px, 3.5vw, 34px);
+      line-height: 1.28;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-visual {
+      background: linear-gradient(160deg, #0f233f 0%, #16345f 100%);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+    }
+
+    .section {
+      padding: 24px;
+    }
+
+    .section h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+    }
+
+    .section p {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .kicker {
+      margin: 0 0 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--brand);
+      letter-spacing: 0.04em;
+    }
+
+    .grid2 {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid3 {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      background: #fff;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      border: 1px solid #cdddf8;
+    }
+
+    .icon svg { width: 24px; height: 24px; }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .vehicle-visual {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: linear-gradient(145deg, #f6f9ff 0%, #ecf2ff 100%);
+      padding: 14px;
+      display: grid;
+      place-items: center;
+    }
+
+    .vehicle-visual img {
+      width: min(100%, 360px);
+      max-height: 260px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .bullets {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .bullets li { margin: 0 0 6px; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+      position: relative;
+    }
+
+    .step .num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: inline-grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      background: var(--brand);
+      margin-bottom: 8px;
+    }
+
+    .step h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-note {
+      padding: 16px 24px 22px;
+      color: var(--muted);
+      font-size: 12px;
+      border-top: 1px solid var(--line);
+      background: #fbfdff;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .grid2,
+      .grid3,
+      .feature-row,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+      .hero { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="panel hero">
+      <div class="hero-copy">
+        <span class="badge">株式会社NanoAct | 別府エリア宿泊施設向け</span>
+        <h1>宿泊者の移動体験を拡張する<br>特定小型原付シェア導入モデル</h1>
+        <p>
+          NanoActが車体を準備し、ホテル・旅館等に設置。宿泊者はアプリで予約から利用、決済まで完結。
+          宿側のオペレーション負担を抑えつつ、観光導線を伸ばすための導入モデルです。
+        </p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="24" y="32" width="592" height="356" rx="20" fill="#102847" stroke="#335688"/>
+          <rect x="62" y="72" width="220" height="280" rx="14" fill="#0A1A32" stroke="#3A5D8C"/>
+          <rect x="88" y="106" width="168" height="172" rx="10" fill="#14335E"/>
+          <circle cx="172" cy="302" r="17" fill="#15A58E"/>
+          <rect x="340" y="84" width="232" height="82" rx="12" fill="#173A68"/>
+          <rect x="360" y="108" width="140" height="12" rx="6" fill="#7FB0FF"/>
+          <rect x="360" y="130" width="190" height="12" rx="6" fill="#5A83C4"/>
+          <rect x="340" y="186" width="232" height="82" rx="12" fill="#173A68"/>
+          <rect x="360" y="210" width="140" height="12" rx="6" fill="#7FB0FF"/>
+          <rect x="360" y="232" width="190" height="12" rx="6" fill="#5A83C4"/>
+          <rect x="340" y="288" width="232" height="62" rx="12" fill="#0F6A5E"/>
+          <rect x="360" y="312" width="170" height="12" rx="6" fill="#C6F5EC"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="panel section">
+      <p class="kicker">POINT 1</p>
+      <h2>特定小型原付について</h2>
+      <div class="grid3">
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1d4d98" stroke-width="2">
+              <path d="M5 12h14M12 5v14"/>
+            </svg>
+          </div>
+          <h3>法令区分に基づく運用</h3>
+          <p>特定小型原付の区分に適合する車体を前提とし、施設導入時に運用条件を整理します。</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1d4d98" stroke-width="2">
+              <path d="M3 12l4 4 14-14"/>
+            </svg>
+          </div>
+          <h3>利用者向けルール案内</h3>
+          <p>アプリ内案内と現地掲示を組み合わせ、初回利用でも迷わない運用フローを整備します。</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1d4d98" stroke-width="2">
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <path d="M8 9h8M8 13h5"/>
+            </svg>
+          </div>
+          <h3>宿側の運用負担を最小化</h3>
+          <p>予約・貸出・決済の導線をアプリ側に集約し、現場オペレーションを軽くします。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel section">
+      <p class="kicker">POINT 2</p>
+      <h2>使用車体: glafit NFR-01 Pro</h2>
+      <div class="feature-row">
+        <div class="vehicle-visual">
+          <img src="/Users/yutasakurai/Desktop/NanoAct/アイコン/glafit2台.png" alt="glafit NFR-01 Pro 2台の車体画像" />
+        </div>
+        <div class="card" style="background:#fbfdff;">
+          <h3>性能面の強み</h3>
+          <p>
+            別府エリアは市街地から高台へ向かう区間に勾配が多く、平坦路前提の移動手段では使いにくい場面があります。
+            NFR-01 Proは、観光地内のアップダウンを含む移動シーンを想定した走行性能を持ち、
+            「駅・宿・観光地間の短中距離移動」を実運用に載せやすい点が導入時の強みです。
+          </p>
+          <ul class="bullets">
+            <li>別府の坂道環境を想定した運用計画に組み込みやすい登坂対応力</li>
+            <li>低速域での扱いやすさを重視した、観光利用向けのモビリティ設計</li>
+            <li>アプリ連携を前提とした貸出運用に適した車体仕様</li>
+            <li>特定小型原付として導入しやすい運用モデルに対応</li>
+          </ul>
+          <h3 style="margin-top:12px;">宿側導入メリット</h3>
+          <ul class="bullets">
+            <li>館内での移動案内を強化し、周辺観光への送客導線を作れる</li>
+            <li>レンタル導入で宿泊者満足度向上と差別化に寄与</li>
+            <li>チェックイン時の案内追加だけで運用開始しやすく、現場対応を増やしにくい</li>
+            <li>NanoAct主導で設置・運用設計するため、宿側の初期調整を縮小可能</li>
+            <li>稼働データを可視化し、需要の高い時間帯や導線改善の判断材料にできる</li>
+          </ul>
+          <p style="margin-top:10px; font-size:12px; color:#63748f;">
+            ※ 登坂性能・航続等の定量値は、導入時にメーカー公表仕様の最新値で確定します。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel section">
+      <p class="kicker">POINT 3</p>
+      <h2>運用イメージ（アプリ完結）</h2>
+      <div class="steps">
+        <article class="step">
+          <span class="num">1</span>
+          <h3>予約</h3>
+          <p>宿泊者がアプリで車体と時間を選択し、利用を確定します。</p>
+        </article>
+        <article class="step">
+          <span class="num">2</span>
+          <h3>ロック/アンロック</h3>
+          <p>現地で対象車体をアプリから解錠。返却時は施錠して利用終了。</p>
+        </article>
+        <article class="step">
+          <span class="num">3</span>
+          <h3>決済</h3>
+          <p>利用料金はアプリ上で完了。履歴データを運用管理に活用できます。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel footer-note">
+      本ページは宿泊施設向け説明用の概要です。導入時の運用条件・注意事項は、最新の法令、
+      メーカー公表情報、契約条件に基づいて確定します。<br>
+      株式会社NanoAct / 別府エリア導入担当
+    </section>
+  </main>
+</body>
+</html>
