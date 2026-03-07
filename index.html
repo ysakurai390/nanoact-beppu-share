@@ -152,6 +152,37 @@
       color: var(--muted);
     }
 
+    .rule-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .rule-list li { margin: 0 0 6px; }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin: 10px 0 4px;
+    }
+
+    .spec-item {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px 10px;
+      background: #fff;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .spec-item strong {
+      display: block;
+      font-size: 13px;
+      color: var(--ink);
+    }
+
     .icon {
       width: 44px;
       height: 44px;
@@ -252,6 +283,9 @@
       .steps {
         grid-template-columns: 1fr;
       }
+      .spec-grid {
+        grid-template-columns: 1fr;
+      }
       .hero { min-height: auto; }
     }
   </style>
@@ -288,15 +322,24 @@
     <section class="panel section">
       <p class="kicker">POINT 1</p>
       <h2>特定小型原付について</h2>
-      <div class="grid3">
+      <p>
+        特定小型原動機付自転車（特定小型原付）は、2023年7月施行の法改正で新設された車両区分です。
+        電動キックボードや電動モペット等のうち、一定の基準を満たす車両が対象になります。
+      </p>
+      <div class="grid2">
         <article class="card">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="#1d4d98" stroke-width="2">
               <path d="M5 12h14M12 5v14"/>
             </svg>
           </div>
-          <h3>法令区分に基づく運用</h3>
-          <p>特定小型原付の区分に適合する車体を前提とし、施設導入時に運用条件を整理します。</p>
+          <h3>区分と定義（主な基準）</h3>
+          <ul class="rule-list">
+            <li>定格出力: 0.60kW以下</li>
+            <li>車体寸法: 長さ190cm以下、幅60cm以下</li>
+            <li>最高速度: 20km/h以下（歩道モードは6km/h以下）</li>
+            <li>動力はモーター走行（ペダルをこがなくても走行可）</li>
+          </ul>
         </article>
         <article class="card">
           <div class="icon" aria-hidden="true">
@@ -304,20 +347,19 @@
               <path d="M3 12l4 4 14-14"/>
             </svg>
           </div>
-          <h3>利用者向けルール案内</h3>
-          <p>アプリ内案内と現地掲示を組み合わせ、初回利用でも迷わない運用フローを整備します。</p>
-        </article>
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#1d4d98" stroke-width="2">
-              <rect x="3" y="5" width="18" height="14" rx="2"/>
-              <path d="M8 9h8M8 13h5"/>
-            </svg>
-          </div>
-          <h3>宿側の運用負担を最小化</h3>
-          <p>予約・貸出・決済の導線をアプリ側に集約し、現場オペレーションを軽くします。</p>
+          <h3>運転ルールと必要手続き</h3>
+          <ul class="rule-list">
+            <li>16歳以上は免許不要（16歳未満は運転禁止）</li>
+            <li>ヘルメット着用は努力義務</li>
+            <li>ナンバープレートと自賠責保険加入は必須</li>
+            <li>原則は車道走行。標識等で許可された場所のみ歩道走行可</li>
+            <li>歩道走行時は6km/h以下かつ最高速度表示灯の点滅が必要</li>
+          </ul>
         </article>
       </div>
+      <p style="margin-top:10px; font-size:12px; color:#63748f;">
+        ※ 交通ルールの詳細は警視庁・警察庁の最新案内に準拠して運用します。
+      </p>
     </section>
 
     <section class="panel section">
@@ -331,9 +373,17 @@
           <h3>性能面の強み</h3>
           <p>
             別府エリアは市街地から高台へ向かう区間に勾配が多く、平坦路前提の移動手段では使いにくい場面があります。
-            NFR-01 Proは、観光地内のアップダウンを含む移動シーンを想定した走行性能を持ち、
+            NFR-01 Proは500Wモーターと高トルク設定により、観光地内のアップダウンを含む移動に対応しやすく、
             「駅・宿・観光地間の短中距離移動」を実運用に載せやすい点が導入時の強みです。
           </p>
+          <div class="spec-grid">
+            <div class="spec-item"><strong>航続距離</strong>定地走行 46km / JEMPA測定 44km</div>
+            <div class="spec-item"><strong>モーター出力</strong>0.5kW（500W）</div>
+            <div class="spec-item"><strong>登坂力</strong>30%</div>
+            <div class="spec-item"><strong>最高速度</strong>20km/h（歩道モード 6km/h）</div>
+            <div class="spec-item"><strong>充電時間</strong>約5時間</div>
+            <div class="spec-item"><strong>車両重量</strong>24kg（バッテリー装着時）</div>
+          </div>
           <ul class="bullets">
             <li>別府の坂道環境を想定した運用計画に組み込みやすい登坂対応力</li>
             <li>低速域での扱いやすさを重視した、観光利用向けのモビリティ設計</li>
@@ -349,7 +399,7 @@
             <li>稼働データを可視化し、需要の高い時間帯や導線改善の判断材料にできる</li>
           </ul>
           <p style="margin-top:10px; font-size:12px; color:#63748f;">
-            ※ 登坂性能・航続等の定量値は、導入時にメーカー公表仕様の最新値で確定します。
+            ※ スペック値はglafit公式（NFR-01 Pro製品ページ）掲載値をベースに記載。導入時は最新公表値で最終確定します。
           </p>
         </div>
       </div>
