@@ -90,12 +90,6 @@
       padding: 24px;
     }
 
-    .hero-visual svg {
-      width: 100%;
-      max-width: 420px;
-      height: auto;
-    }
-
     .hero-visual img {
       width: min(100%, 420px);
       height: auto;
@@ -103,6 +97,7 @@
       border-radius: 12px;
       background: #fff;
       padding: 8px;
+      display: block;
     }
 
     .section {
@@ -222,11 +217,12 @@
     }
 
     .vehicle-visual img {
-      width: min(100%, 360px);
-      max-height: 260px;
+      width: min(100%, 520px);
+      max-height: 320px;
       height: auto;
       object-fit: contain;
       border-radius: 10px;
+      display: block;
     }
 
     .bullets {
@@ -340,7 +336,11 @@
         </p>
       </div>
       <div class="hero-visual" aria-hidden="true">
-        <img src="./images/nanoact-logo.jpg" alt="株式会社NanoAct ロゴ" />
+        <img
+          src="./images/nanoact-logo.jpg"
+          alt="株式会社NanoAct ロゴ"
+          onerror="this.onerror=null;this.src='./images/NanoAct_C1_1003-02.jpg';"
+        />
       </div>
     </section>
 
@@ -392,7 +392,11 @@
       <h2>使用車体: glafit NFR-01 Pro</h2>
       <div class="feature-row">
         <div class="vehicle-visual">
-          <img src="./images/glafit-bikes.png" alt="glafit NFR-01 Pro 2台の車体画像" />
+          <img
+            src="./images/glafit-bikes.png"
+            alt="glafit NFR-01 Pro 2台の車体画像"
+            onerror="this.onerror=null;this.src='./images/glafit2台.png';"
+          />
         </div>
         <div class="card" style="background:#fbfdff;">
           <h3>性能面の強み</h3>
