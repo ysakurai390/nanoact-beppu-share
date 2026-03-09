@@ -96,6 +96,15 @@
       height: auto;
     }
 
+    .hero-visual img {
+      width: min(100%, 420px);
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #fff;
+      padding: 8px;
+    }
+
     .section {
       padding: 24px;
     }
@@ -235,6 +244,34 @@
       gap: 14px;
     }
 
+    .benefit-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .benefit-item {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      background: #fff;
+    }
+
+    .benefit-item h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+
+    .benefit-item ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .benefit-item li {
+      margin: 0 0 5px;
+    }
+
     .step {
       border: 1px solid var(--line);
       border-radius: 14px;
@@ -280,7 +317,8 @@
       .grid2,
       .grid3,
       .feature-row,
-      .steps {
+      .steps,
+      .benefit-list {
         grid-template-columns: 1fr;
       }
       .spec-grid {
@@ -302,20 +340,7 @@
         </p>
       </div>
       <div class="hero-visual" aria-hidden="true">
-        <svg viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="24" y="32" width="592" height="356" rx="20" fill="#102847" stroke="#335688"/>
-          <rect x="62" y="72" width="220" height="280" rx="14" fill="#0A1A32" stroke="#3A5D8C"/>
-          <rect x="88" y="106" width="168" height="172" rx="10" fill="#14335E"/>
-          <circle cx="172" cy="302" r="17" fill="#15A58E"/>
-          <rect x="340" y="84" width="232" height="82" rx="12" fill="#173A68"/>
-          <rect x="360" y="108" width="140" height="12" rx="6" fill="#7FB0FF"/>
-          <rect x="360" y="130" width="190" height="12" rx="6" fill="#5A83C4"/>
-          <rect x="340" y="186" width="232" height="82" rx="12" fill="#173A68"/>
-          <rect x="360" y="210" width="140" height="12" rx="6" fill="#7FB0FF"/>
-          <rect x="360" y="232" width="190" height="12" rx="6" fill="#5A83C4"/>
-          <rect x="340" y="288" width="232" height="62" rx="12" fill="#0F6A5E"/>
-          <rect x="360" y="312" width="170" height="12" rx="6" fill="#C6F5EC"/>
-        </svg>
+        <img src="./images/nanoact-logo.jpg" alt="株式会社NanoAct ロゴ" />
       </div>
     </section>
 
@@ -367,7 +392,7 @@
       <h2>使用車体: glafit NFR-01 Pro</h2>
       <div class="feature-row">
         <div class="vehicle-visual">
-          <img src="./images/glafit2台.png" alt="glafit NFR-01 Pro 2台の車体画像" />
+          <img src="./images/glafit-bikes.png" alt="glafit NFR-01 Pro 2台の車体画像" />
         </div>
         <div class="card" style="background:#fbfdff;">
           <h3>性能面の強み</h3>
@@ -465,12 +490,55 @@
       </div>
     </section>
 
+    <section class="panel section">
+      <p class="kicker">POINT 5</p>
+      <h2>特定小型原付シェアリングサービス設置のメリット</h2>
+      <div class="benefit-list">
+        <article class="benefit-item">
+          <h3>1) 宿泊体験の価値が上がり、口コミ・満足度につながる</h3>
+          <ul>
+            <li>「徒歩だと遠い」「バスが分かりにくい」「タクシー待ち」など、観光地の移動ストレスを減らせる</li>
+            <li>結果として、滞在中の自由度が上がり、満足度・レビューの改善が期待できる</li>
+          </ul>
+        </article>
+        <article class="benefit-item">
+          <h3>2) “選ばれる理由”になり、差別化できる</h3>
+          <ul>
+            <li>「宿にモビリティがある」は分かりやすい付加価値となり、比較検討時の決め手になりやすい</li>
+            <li>体験型の宿、若年層、インバウンド向けに特に訴求しやすい</li>
+          </ul>
+        </article>
+        <article class="benefit-item">
+          <h3>3) 追加の館内サービスとして、収益機会を作れる</h3>
+          <ul>
+            <li>設置協力施設向けに収益分配の設計も可能</li>
+          </ul>
+        </article>
+        <article class="benefit-item">
+          <h3>4) 車を動かさない滞在を作れて、運用面のメリットも出る</h3>
+          <ul>
+            <li>駐車場が少ない、道が狭いエリアでは「車を出さずに動ける」価値が大きい</li>
+            <li>タクシー手配などフロント業務の一部軽減につながる可能性</li>
+          </ul>
+        </article>
+        <article class="benefit-item">
+          <h3>5) 地域回遊の促進で、地域連携の打ち手になる</h3>
+          <ul>
+            <li>近隣の飲食・観光施設への回遊が増え、地域全体の体験価値向上に貢献</li>
+            <li>観光関連団体との取り組みとしてPRしやすい</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <section class="panel footer-note">
-      本ページは宿泊施設向け説明用の概要です。導入時の運用条件・注意事項は、最新の法令、
-      メーカー公表情報、契約条件に基づいて確定します。<br>
-      株式会社NanoAct / 別府エリア導入担当
+      <strong>お問い合わせ・導入のご相談はこちら</strong><br>
+      株式会社NanoAct 別府エリア導入担当: 櫻井（サクライ）<br>
+      メール: <a href="mailto:sakurai@nanoact.jp">sakurai@nanoact.jp</a><br>
+      お問い合わせフォーム（1分）:
+      <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=tXXefBLjeEmMcUNczENLjFiwHE9kCUhPi9AHtulHIeRUMUdSVEJWMzI0UFpCNkZER0JJOTZRQkQyTi4u" target="_blank" rel="noopener noreferrer">こちら</a><br><br>
+      本ページは宿泊施設向け説明用の概要です。導入時の運用条件・注意事項は、最新の法令、メーカー公表情報、契約条件に基づいて確定します。
     </section>
   </main>
 </body>
 </html>
-
